@@ -5,7 +5,7 @@ function findMax(elements) {
   let numericElements = elements.filter(function (item) {
     return typeof item === "number";
   });
-  console.log("numeric value",numericElements);
+  console.log("numeric value", numericElements);
   let max = numericElements[0];
   for (let i = 1; i < numericElements.length; i++) {
     if (numericElements[i] > max) {
@@ -15,6 +15,6 @@ function findMax(elements) {
   return max;
 }
 
-console.log(findMax(["h", 9, "l"]));
+console.log(findMax(["h"]));
 
 module.exports = findMax;

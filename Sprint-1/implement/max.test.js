@@ -62,6 +62,6 @@ describe("findMax", () => {
         expect(findMax([10, "h", "hello", 9, 22, "world"])).toEqual(22)
     })
     test("Given an array with only non-number values,it should return the least surprising value given how it behaves for all other inputs", () => {
-        expect(findMax(['hello', 'hi', 9, 'world', 4, 22])).toEqual(22)
+        expect(findMax(['hello'])).toEqual(undefined)
     })
 })
