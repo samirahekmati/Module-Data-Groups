@@ -36,3 +36,18 @@ function invert(obj) {
 //Also corrcted version would be like this: invertedObj[value] = key;
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
+
+
+//testing with test cases:
+
+//Test case 1: Basic Test Case: Invert a simple object with one key-value pair
+console.assert(JSON.stringify(invert( {a : 1})) === JSON.stringify({"1" : "a"}), "Test case 1 failed");
+
+//Test case 2: Multiple Key-Value Pairs: Invert an object with multiple properties
+console.assert(JSON.stringify(invert( {a : 1, b : 2})) === JSON.stringify({"1" : "a", "2" : "b"}), "Test case 2 failed");
+
+//Test case 3: Empty Object: Invert an empty object.
+console.assert(JSON.stringify(invert({})) === JSON.stringify({}), "Test case 3 failed");
+
+//Test case 4: Object with Mixed Data Types
+console.assert(JSON.stringify(invert( {name : "John", age : 33})) === JSON.stringify({"John" : "Name" , "33" : "age"}), "Test case 3 failed");
