@@ -1,4 +1,48 @@
-function setAlarm() {}
+function myLog(...message) {
+  const debug = false;
+  if (debug) {
+    console.log(...message);
+  }
+}
+
+let initialInputSeconds = 0;
+let intervalId;
+
+function countdown() {
+  upadteTimeRemaining(initialInputSeconds);
+  if (initialInputSeconds <= 0) {
+    clearInterval(intervalId);
+    playAlarm();
+    return;
+  }
+  initialInputSeconds--;
+}
+
+function upadteTimeRemaining(inputSeconds) {
+  myLog("timer in second:", inputSeconds);
+  const minutes = Math.floor(inputSeconds / 60);
+  myLog("minutes:", minutes);
+  const seconds = inputSeconds % 60;
+  myLog("seconds:", seconds);
+  const paddedMinutes = String(minutes).padStart(2, "0");
+  myLog("paddedMinutes:", paddedMinutes);
+  const paddedSeconds = String(seconds).padStart(2, "0");
+  myLog("paddedSeconds:", paddedSeconds);
+  document.getElementById(
+    "timeRemaining"
+  ).innerText = `Time Remaining: ${paddedMinutes}:${paddedSeconds}`;
+}
+
+function setAlarm() {
+  initialInputSeconds = document.getElementById("alarmSet").value;
+
+  if (initialInputSeconds <= 0) {
+    alert("Your input is invalid");
+  } else {
+    //set the countdown timer with `setInterval` to update the remainig time every second
+    intervalId = setInterval(countdown, 1000);
+  }
+}
 
 // DO NOT EDIT BELOW HERE
 
