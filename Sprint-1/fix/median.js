@@ -3,23 +3,20 @@
 // If you're in the Sprint-1 directory, you can run `npm test -- fix` to run the tests in the fix directory
 
 function calculateMedian(list) {
-  if (list.length % 2 !== 0) {
-    const middleIndex = Math.floor(list.length / 2);
-    const median = list[middleIndex];
+  let sortedList = list.sort();
+  if (sortedList.length % 2 !== 0) {
+    const middleIndex = Math.floor(sortedList.length / 2);
+    const median = sortedList[middleIndex];
     return median;
   } else {
-    console.log("list.length", list.length);
-
-    const afterMiddleIndex = Math.floor(list.length / 2);
+    const afterMiddleIndex = Math.floor(sortedList.length / 2);
     console.log("afterMiddleIndex", afterMiddleIndex);
-    const secondMedian = list[afterMiddleIndex];
+    const secondMedian = sortedList[afterMiddleIndex];
     console.log("secondMedian", secondMedian);
 
-    console.log("list.length", list.length);
-
-    const beforeMiddleIndex = Math.floor(list.length / 2) - 1;
+    const beforeMiddleIndex = Math.floor(sortedList.length / 2) - 1;
     console.log("beforeMiddleIndex", beforeMiddleIndex);
-    const firstMedian = list[beforeMiddleIndex];
+    const firstMedian = sortedList[beforeMiddleIndex];
     console.log("firstMedian", firstMedian);
     return average(secondMedian, firstMedian);
   }
