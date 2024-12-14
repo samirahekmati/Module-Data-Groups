@@ -1,6 +1,6 @@
 function findMax(elements) {
   if (elements.length === 0) {
-    return "Infinity";
+    return Infinity;
   }
   let numericElements = elements.filter(function (item) {
     return typeof item === "number";

@@ -44,7 +44,7 @@ const findMax = require("./max.js");
 
 describe("findMax", () => {
     test("Given an empty array,it should return -Infinity", () =>{
-        expect(findMax([])).toEqual("Infinity")
+        expect(findMax([])).toEqual(Infinity)
     });
     test("Given an array with one number,it should return that number", () => {
         expect(findMax([10])).toEqual(10)
