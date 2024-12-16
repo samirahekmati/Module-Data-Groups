@@ -497,8 +497,8 @@ function generateNewQuote() {
   const quoteText = newQuote.quote;
   const quoteAuthor = newQuote.author;
 
-  document.getElementById("quote").innerText = quoteText;
-  document.getElementById("author").innerText = quoteAuthor;
+  document.getElementById("quote").innerText = `"${quoteText}"`;
+  document.getElementById("author").innerText = `- ${quoteAuthor}`;
 }
 function setup() {
   document.getElementById("new-quote").addEventListener("click", () => {
