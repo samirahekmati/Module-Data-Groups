@@ -28,5 +28,9 @@ body {
    border-radius: 30px;
 }
 
+#new-quote:hover {
+    background-color: rgb(115, 235, 235);
+    cursor: pointer;
+}
 
 
