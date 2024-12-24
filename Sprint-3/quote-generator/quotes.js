@@ -506,4 +506,4 @@ function setup() {
   });
 }
 
-window.onload = setup;
+window.onload = generateNewQuote;
