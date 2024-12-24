@@ -507,3 +507,4 @@ function setup() {
 }
 
 window.onload = generateNewQuote;
+setup();
