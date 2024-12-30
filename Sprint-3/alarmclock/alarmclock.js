@@ -1,5 +1,5 @@
 function myLog(...message) {
-  const debug = false;
+  const debug = true;
   if (debug) {
     console.log(...message);
   }
@@ -9,13 +9,14 @@ let initialInputSeconds = 0;
 let intervalId;
 
 function countdown() {
+  initialInputSeconds--;
   upadteTimeRemaining(initialInputSeconds);
   if (initialInputSeconds <= 0) {
     clearInterval(intervalId);
     playAlarm();
     return;
   }
-  initialInputSeconds--;
+  
 }
 
 function upadteTimeRemaining(inputSeconds) {
@@ -35,6 +36,7 @@ function upadteTimeRemaining(inputSeconds) {
 
 function setAlarm() {
   initialInputSeconds = document.getElementById("alarmSet").value;
+  upadteTimeRemaining(initialInputSeconds);
 
   if (initialInputSeconds <= 0) {
     alert("Your input is invalid");
@@ -64,6 +66,8 @@ function playAlarm() {
 
 function pauseAlarm() {
   audio.pause();
+  
+
 }
 
 window.onload = setup;
