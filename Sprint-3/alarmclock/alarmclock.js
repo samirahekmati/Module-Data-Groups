@@ -66,7 +66,9 @@ function playAlarm() {
 
 function pauseAlarm() {
   audio.pause();
-  
+  clearInterval(intervalId);
+  initialInputSeconds = 0;
+  upadteTimeRemaining(initialInputSeconds);
 
 }
 
