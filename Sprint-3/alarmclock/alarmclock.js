@@ -69,7 +69,7 @@ function pauseAlarm() {
   clearInterval(intervalId);
   initialInputSeconds = 0;
   upadteTimeRemaining(initialInputSeconds);
-
+  document.getElementById("alarmSet").value = "";
 }
 
 window.onload = setup;
