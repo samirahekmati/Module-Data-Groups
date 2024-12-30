@@ -35,6 +35,7 @@ function upadteTimeRemaining(inputSeconds) {
 }
 
 function setAlarm() {
+  document.getElementById("set").disabled = true;
   initialInputSeconds = document.getElementById("alarmSet").value;
   upadteTimeRemaining(initialInputSeconds);
 
@@ -45,6 +46,7 @@ function setAlarm() {
     intervalId = setInterval(countdown, 1000);
   }
 }
+
 
 // DO NOT EDIT BELOW HERE
 
@@ -70,6 +72,7 @@ function pauseAlarm() {
   initialInputSeconds = 0;
   upadteTimeRemaining(initialInputSeconds);
   document.getElementById("alarmSet").value = "";
+  document.getElementById("set").disabled = false;
 }
 
 window.onload = setup;
