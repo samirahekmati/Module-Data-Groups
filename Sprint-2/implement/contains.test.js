@@ -43,7 +43,7 @@ describe("contains", () => {
    test("When passed to contains with a non-existent property name,it should return false", () => {
      expect(contains({a:1, b:2}, "c")).toEqual(false);
    });
-   test("Given invalid parameters like an array,it should return false or throw an error", () => {
-    expect(contains(["a", "b", "c"], "c")).toEqual(false)
-   })
+   test("should throw an error when passed null", () => {
+    expect(() => contains(null, "key")).toThrow("Invalid input: Expected a non-null object.");
+});
 });
